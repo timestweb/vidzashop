@@ -1,3 +1,4 @@
+@config "../../tailwind.config.ts";
 @import "tailwindcss";
 
 :root {
@@ -5,16 +6,18 @@
   --foreground: #171717;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-gendra: var(--font-gendra);
+  --font-manrope: var(--font-manrope);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -23,4 +26,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
 }

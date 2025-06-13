@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import "../styles/globals.css";
+import localFont from "next/font/local";
+import { Manrope } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/navbar";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
+const gendra = localFont({
+  src: "./fonts/gendra.woff2",
+  weight: "400",
+  variable: "--font-gendra",
+  display: "swap",
+});
 
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
+});
 
 export const metadata: Metadata = {
   title: "Vidzashop",
@@ -22,10 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-      >
-        {children}
+    <html lang="en" className={`${manrope.variable} ${gendra.variable}`}>
+      <body>
+        <Navbar/>
+        <main>{children}</main>
       </body>
     </html>
   );

@@ -4,10 +4,11 @@ import React, { ReactNode, useState } from "react";
 import Logo from "../logo";
 import Link from "next/link";
 import HomeIcon from "../icons/home_icon";
-import Filter from "../filter/filter";
 import { PiGlobeLight } from "react-icons/pi";
 import { LuCirclePlus } from "react-icons/lu";
 import { CiUser } from "react-icons/ci";
+import Divider from "../divider";
+import SelectBox from "../selectbox";
 
 export default function Navbar() {
   const categories = ["All Categories", "Cars", "House"];
@@ -21,24 +22,26 @@ export default function Navbar() {
       role="navigation"
     >
       <Logo />
-      <div className="flex gap-12 pr-8 items-center">
+      <div className="flex gap-8 items-center">
         <LinkText iconPrefix={true} icon={<HomeIcon />} href="/" text="Home" />
-        <Filter
+        <SelectBox
           className="pt-2"
           options={categories}
           value={selected}
           onChange={setSelected}
         />
         <LinkText iconPrefix={false} href="/" text="Leasing" />
+        <Divider className="h-8" />
         <LinkText iconPrefix={false} href="/" text="Sales" />
       </div>
       <div className="flex gap-4 items-center">
-        <Filter
+        <SelectBox
           className="pt-2"
           options={currencies}
           value={currencySelected}
           onChange={setCurrencySelected}
         />
+        <Divider className="h-8" />
         <LinkText
           className="text-success"
           iconPrefix={true}
@@ -46,6 +49,7 @@ export default function Navbar() {
           href="/"
           text="Post an Ad"
         />
+        <Divider className="h-8" />
         <PiGlobeLight className="w-5 h-5 text-primary" />
         <div className="border border-surface-divider flex justify-center items-center p-1 rounded-full w-6 h-6 shadow-2xl">
           <CiUser className="text-black text-lg" />
@@ -76,3 +80,5 @@ function LinkText(props: LinkTextProps) {
     </div>
   );
 }
+
+ 

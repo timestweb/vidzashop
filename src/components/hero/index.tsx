@@ -3,6 +3,7 @@ import React from "react";
 import hero_car from "../../../public/images/hero/hero_car.jpg";
 import hero_grinder from "../../../public/images/hero/hero_grinder.jpg";
 import hero_grinder_man from "../../../public/images/hero/hero_man_grinder.jpg";
+import SearchPanel from "./search";
 
 export default function HeroSection() {
   const backgroundImages = [
@@ -26,7 +27,7 @@ export default function HeroSection() {
         <h2 className="text-white text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-8 max-w-6xl leading-tight">
           Buy construction machinery and industrial equipment
         </h2>
-        <div className="bg-white w-full px-6 py-3 h-[4.87rem] rounded-[3.125rem]"></div>
+        <SearchPanel />
       </div>
     </div>
   );

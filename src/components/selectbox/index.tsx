@@ -8,8 +8,6 @@ import {
 } from "@headlessui/react";
 import { FiCheck, FiChevronDown } from "react-icons/fi";
 
-
-
 type Option = string | number | { label: string; value: string | number };
 
 interface ListboxFilterProps<T extends Option> {
@@ -27,7 +25,7 @@ function getLabel(option: Option): string {
   return String(option);
 }
 
-export default function Filter<T extends Option>({
+export default function SelectBox<T extends Option>({
   label,
   options,
   value,
@@ -36,7 +34,9 @@ export default function Filter<T extends Option>({
 }: ListboxFilterProps<T>) {
   return (
     <div className={`${className}`}>
-      {label && <label className="mb-1 block text-sm text-gray-600">{label}</label>}
+      {label && (
+        <label className="mb-1 text-primary text-left">{label}</label>
+      )}
 
       <Listbox value={value} onChange={onChange}>
         <div className="relative">
@@ -47,7 +47,10 @@ export default function Filter<T extends Option>({
             </span>
           </ListboxButton>
 
-          <ListboxOptions anchor="bottom" className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white shadow-lg border border-gray-200 focus:outline-none sm:text-sm">
+          <ListboxOptions
+            anchor="bottom"
+            className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white shadow-lg border border-gray-200 focus:outline-none sm:text-sm"
+          >
             {options.map((option, index) => (
               <ListboxOption
                 key={index}

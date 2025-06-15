@@ -324,12 +324,12 @@ export default function PopularCategories() {
           count: 19,
           description: "Metal joining equipment",
         },
-        {
-          id: "lathe",
-          title: "Lathe Machine",
-          count: 13,
-          description: "Metal shaping equipment",
-        },
+        // {
+        //   id: "lathe",
+        //   title: "Lathe Machine",
+        //   count: 13,
+        //   description: "Metal shaping equipment",
+        // },
       ],
     },
   ];

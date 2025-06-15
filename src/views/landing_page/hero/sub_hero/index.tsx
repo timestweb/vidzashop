@@ -1,12 +1,13 @@
 import React from "react";
-import automobile from "../../../../public/images/hero/hero_car.jpg";
-import construction from "../../../../public/images/hero/hero_grinder.jpg";
-import oil from "../../../../public/images/hero/oil_and_gas.jpg";
-import marine from "../../../../public/images/hero/maritime.jpg";
-import telecomm from "../../../../public/images/hero/telecommunication.jpg";
-import industrial from "../../../../public/images/hero/industrial.jpg";
-import others from "../../../../public/images/hero/others.jpg";
+import automobile from "../../../../../public/images/hero/hero_car.jpg";
+import construction from "../../../../../public/images/hero/hero_grinder.jpg";
+import oil from "../../../../../public/images/hero/oil_and_gas.jpg";
+import marine from "../../../../../public/images/hero/maritime.jpg";
+import telecomm from "../../../../../public/images/hero/telecommunication.jpg";
+import industrial from "../../../../../public/images/hero/industrial.jpg";
+import others from "../../../../../public/images/hero/others.jpg";
 import Image, { StaticImageData } from "next/image";
+import Banner from "@/components/banner";
 
 export default function SubHeroSection() {
   const imageDetails = [
@@ -20,20 +21,21 @@ export default function SubHeroSection() {
   ];
 
   return (
-    <div className="relative bg-primary h-72 overflow-hidden">
-      <div className="absolute inset-0 bg-logo opacity-2"></div>
-      <div className="relative z-10 h-full flex justify-between items-center px-6">
-        {imageDetails.map((imgDetail, index) => (
-          <div key={index}>
-            <IndustryDescription
-              img={imgDetail.img}
-              imgAlt={imgDetail.imgAlt}
-              desc={imgDetail.desc}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
+    <Banner
+      content={
+        <div className="relative z-10 h-full flex justify-between items-center px-6">
+          {imageDetails.map((imgDetail, index) => (
+            <div key={index}>
+              <IndustryDescription
+                img={imgDetail.img}
+                imgAlt={imgDetail.imgAlt}
+                desc={imgDetail.desc}
+              />
+            </div>
+          ))}
+        </div>
+      }
+    />
   );
 }
 

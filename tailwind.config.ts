@@ -19,7 +19,8 @@ const config: Config = {
           icons: "#292D32",
           muted: "#0000001A",
           gray: "#F1F0F0",
-          divider: '#E5E5E5'
+          divider: '#E5E5E5',
+          cod: '#1E1E1E1A'
         },
         text: {
           secondary: "#00000080",

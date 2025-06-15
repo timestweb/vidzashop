@@ -12,10 +12,10 @@ export default function SearchPanel() {
   const location = ["Location", "Abuja", "Lagos"];
   const [locate, setLocate] = useState(location[0]);
   return (
-    <div className="bg-white w-full flex space-x-6 px-24 py-3 h-[4.87rem] rounded-[3.125rem]">
+    <div className="bg-white flex flex-col md:flex-row md:space-x-6 px-24 py-3 h-[4.87rem] rounded-[3.125rem]">
       <div className="flex space-x-2">
         <TextInput
-          className="w-54 md:w-72"
+          className="w-32 md:w-72"
           name="search"
           label="Item"
           placeholder="Search Vidza Shop"
@@ -42,7 +42,9 @@ export default function SearchPanel() {
         />
         <Divider className="h-12" />
       </div>
-      <div className="flex justify-center items-center"><CiSearch className="text-primary text-2xl" /></div>
+      <div className="flex justify-center items-center">
+        <CiSearch className="text-primary text-2xl" />
+      </div>
     </div>
   );
 }

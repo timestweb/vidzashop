@@ -6,15 +6,15 @@ import React from "react";
 import clsx from "clsx";
 
 interface TabItem {
-  id: string; // Add unique identifier for better key management
+  id: string; 
   label: string;
   content: React.ReactNode;
 }
 
 interface TabsProps {
   tabs: TabItem[];
-  defaultTab?: string; // Allow setting default active tab
-  onChange?: (tabId: string) => void; // Callback for tab changes
+  defaultTab?: string; 
+  onChange?: (tabId: string) => void; 
 }
 
 export default function Tabs({ tabs, defaultTab, onChange }: TabsProps) {
@@ -58,7 +58,7 @@ export default function Tabs({ tabs, defaultTab, onChange }: TabsProps) {
 
       <TabPanels className="mt-6">
         {tabs.map((tab) => (
-          <TabPanel key={tab.id} className="grid grid-cols-6 gap-6">
+          <TabPanel key={tab.id} className="grid grid-cols-6 gap-8">
             {tab.content}
           </TabPanel>
         ))}

@@ -1,5 +1,7 @@
+import Divider from "@/components/divider";
 import Tabs from "@/components/tab";
 import React from "react";
+import { GoPlusCircle } from "react-icons/go";
 
 function Item({ title, count }: { title: string; count: number }) {
   return (
@@ -346,9 +348,20 @@ export default function PopularCategories() {
 
   return (
     <div className="bg-primary-background py-20 px-8">
-      <h3 className="text-gendra text-2xl text-primary">
-        Popular Categories near you
-      </h3>
+      <div className="flex justify-between">
+        <h3 className="text-gendra text-2xl text-primary">
+          Popular Categories near you
+        </h3>
+        <div className="font-gendra text-primary flex space-x-3">
+          <h3 className="my-auto">Detected Language</h3>
+          <Divider className="border-primary" />
+          <h3 className="text-xs my-auto">Lagos, Nigeria</h3>
+          <Divider className="border-primary" />
+          <h3 className="text-xs my-auto flex space-x-2">
+            <GoPlusCircle className="w-4 h-4" /> <span>Tap to change</span>
+          </h3>
+        </div>
+      </div>
       <div className="py-10">
         <Tabs tabs={categories} />
       </div>

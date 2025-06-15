@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import hero_car from "../../../public/images/hero/hero_car.jpg";
-import hero_grinder from "../../../public/images/hero/hero_grinder.jpg";
-import hero_grinder_man from "../../../public/images/hero/hero_man_grinder.jpg";
-import SearchPanel from "./search";
+import hero_car from "../../../../public/images/hero/hero_car.jpg";
+import hero_grinder from "../../../../public/images/hero/hero_grinder.jpg";
+import hero_grinder_man from "../../../../public/images/hero/hero_man_grinder.jpg";
+import SearchPanel from "@/components/search_panel";
+
 
 export default function HeroSection() {
   const backgroundImages = [

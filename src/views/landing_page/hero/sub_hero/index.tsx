@@ -53,7 +53,7 @@ function IndustryDescription(props: IndustryDescriptionProps) {
         src={props.img}
         alt={props.imgAlt}
       />
-      <p className="text-white font-manrope text-sm mt-5">{props.desc}</p>
+      <p className="text-white font-manrope text-center text-sm mt-5">{props.desc}</p>
     </div>
   );
 }
